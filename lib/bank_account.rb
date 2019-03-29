@@ -3,15 +3,20 @@ attr_accessor :balance, :status, :broke
 attr_reader :name
 
 @@all = []
+
 def initialize(name)
   @name = name
   @balance = 1000
   @status = "open"
   @broke = 0
-  @instance = self
-  binding.pry
+  @@all << self
+  #binding.pry
 end
 
+ def self.all
+   self
+  end
+  
 def deposit(money)
 @balance = 1000 + money
 #binding.pry
