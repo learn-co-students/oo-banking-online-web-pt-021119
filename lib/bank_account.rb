@@ -1,11 +1,15 @@
 class BankAccount
 attr_accessor :balance, :status, :broke
 attr_reader :name
+
+@@all = []
 def initialize(name)
   @name = name
   @balance = 1000
   @status = "open"
   @broke = 0
+  @instance = self
+  binding.pry
 end
 
 def deposit(money)
